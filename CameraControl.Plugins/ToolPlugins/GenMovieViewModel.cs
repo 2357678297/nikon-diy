@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -561,12 +561,12 @@ namespace CameraControl.Plugins.ToolPlugins
                     double aspect = (double) VideoType.Width/VideoType.Height;
                     double pAspect = (double) image.Width/image.Height;
                     if (aspect > pAspect)
-                        image.Crop(image.Width, (int) (image.Width/aspect), Gravity.Center);
+                        image.Crop((uint)image.Width, (uint)(image.Width/aspect), Gravity.Center);
                     else
-                        image.Crop((int) (image.Height/aspect), image.Height, Gravity.Center);
+                        image.Crop((uint)(image.Height/aspect), (uint)image.Height, Gravity.Center);
                 }
 
-                MagickGeometry geometry = new MagickGeometry(VideoType.Width, VideoType.Height)
+                MagickGeometry geometry = new MagickGeometry((uint)VideoType.Width, (uint)VideoType.Height)
                 {
                     IgnoreAspectRatio = false,
                     FillArea = false

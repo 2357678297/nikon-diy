@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -24,14 +24,14 @@ namespace CameraControl.Plugins.ImageTransformPlugins
 
             using (MagickImage image = new MagickImage(infile))
             {
-                int newx = image.Width/(conf.SelectedMode + 2);
-                int newy = image.Height / (conf.SelectedMode + 2);
+                int newx = (int)image.Width/(conf.SelectedMode + 2);
+                int newy = (int)image.Height / (conf.SelectedMode + 2);
                 int cropx = newx * (conf.SelectedMode + 2);
                 int cropy = newy * (conf.SelectedMode + 2);
                 if (cropx != image.Width || cropy != image.Height)
-                    image.Crop(cropx, cropy, Gravity.Center);
+                    image.Crop((uint)cropx, (uint)cropy, Gravity.Center);
                 image.FilterType = FilterType.Box;
-                image.Resize(newx,newy);
+                image.Resize((uint)newx, (uint)newy);
                 image.Format = MagickFormat.Jpeg;
                 image.Write(dest);
             }

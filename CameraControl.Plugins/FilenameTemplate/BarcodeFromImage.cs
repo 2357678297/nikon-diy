@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -54,22 +54,25 @@ namespace CameraControl.Plugins.FilenameTemplate
         private string GetBarcode(string filename, string template)
         {
 
-            IBarcodeReader reader = new BarcodeReader()
+            var reader = new ZXing.BarcodeReaderGeneric()
             {
                 AutoRotate = true,
                 TryInverted = true,
-                Options = new DecodingOptions { TryHarder = true }
+                Options = new ZXing.Common.DecodingOptions { TryHarder = true }
             };
 
             using (var barcodeBitmap = new MagickImage(filename))
             {
-
-                // detect and decode the barcode inside the bitmap
-                var result = reader.Decode(barcodeBitmap.ToBitmap());
-                if (result != null)
-                    // do something with the result
+                // Magick 15 移除了 ToBitmap():导出原始像素,直接喂 RGBLuminanceSource
+                using (var pixels = barcodeBitmap.GetPixels())
                 {
-                    return result.Text;
+                    var byteBuffer = pixels.ToByteArray(PixelMapping.RGB);
+                    var luminance = new ZXing.RGBLuminanceSource(byteBuffer, (int)barcodeBitmap.Width, (int)barcodeBitmap.Height);
+                    var result = reader.Decode(luminance);
+                    if (result != null)
+                    {
+                        return result.Text;
+                    }
                 }
             }
 

@@ -1,4 +1,4 @@
-﻿#region Licence
+#region Licence
 
 // Distributed under MIT License
 // ===========================================================
@@ -32,7 +32,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
-using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading;
 using System.Windows.Controls;

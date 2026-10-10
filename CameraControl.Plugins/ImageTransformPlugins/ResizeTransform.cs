@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -26,7 +26,7 @@ namespace CameraControl.Plugins.ImageTransformPlugins
             dest = Path.Combine(Path.GetDirectoryName(dest), Path.GetFileNameWithoutExtension(dest) + ".jpg");
             using (MagickImage image = new MagickImage(infile))
             {
-                MagickGeometry geometry = new MagickGeometry(conf.Width, conf.Height);
+                MagickGeometry geometry = new MagickGeometry((uint)Math.Max(0,conf.Width), (uint)Math.Max(0,conf.Height));
                 geometry.IgnoreAspectRatio = !conf.KeepAspect;
 
                 image.Resize(geometry);
