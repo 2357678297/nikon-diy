@@ -5,6 +5,7 @@ using System.Runtime.CompilerServices;
 [assembly: TypeForwardedTo(typeof(System.Drawing.Bitmap))]
 [assembly: TypeForwardedTo(typeof(System.Drawing.Image))]
 [assembly: TypeForwardedTo(typeof(System.Drawing.Graphics))]
+[assembly: TypeForwardedTo(typeof(System.Drawing.Imaging.BitmapData))]
 [assembly: TypeForwardedTo(typeof(System.Drawing.Rectangle))]
 [assembly: TypeForwardedTo(typeof(System.Drawing.Point))]
 [assembly: TypeForwardedTo(typeof(System.Drawing.Size))]

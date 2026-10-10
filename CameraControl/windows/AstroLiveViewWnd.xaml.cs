@@ -1,4 +1,4 @@
-﻿#region Licence
+#region Licence
 
 // Distributed under MIT License
 // ===========================================================
@@ -36,7 +36,6 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Timers;
-using System.Web.UI.WebControls.WebParts;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;

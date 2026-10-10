@@ -1,4 +1,4 @@
-﻿#region Licence
+#region Licence
 
 // Distributed under MIT License
 // ===========================================================
@@ -194,11 +194,11 @@ namespace CameraControl.Core.Classes
             {
                 using (MagickImage image = new MagickImage(filename))
                 {
-                    fileItem.FileInfo.SetSize(image.Width, image.Height);
+                    fileItem.FileInfo.SetSize((int)image.Width, (int)image.Height);
 
                     double dw = (double)LargeThumbSize / image.Width;
                     image.FilterType = FilterType.Box;
-                    image.Thumbnail((int)(image.Width * dw), (int)(image.Height * dw));
+                    image.Thumbnail((uint)(image.Width * dw), (uint)(image.Height * dw));
 
                     if (!ServiceProvider.Settings.DisableHardwareAccelerationNew)
                         image.UnsharpMask(1, 1, 0.5, 0.1);
@@ -209,7 +209,7 @@ namespace CameraControl.Core.Classes
                     fileItem.Loading = false;
 
                     dw = (double)SmallThumbSize / image.Width;
-                    image.Thumbnail((int)(image.Width * dw), (int)(image.Height * dw));
+                    image.Thumbnail((uint)(image.Width * dw), (uint)(image.Height * dw));
 
                     if (!ServiceProvider.Settings.DisableHardwareAccelerationNew)
                         image.UnsharpMask(1, 1, 0.5, 0.1);
@@ -352,17 +352,17 @@ namespace CameraControl.Core.Classes
                     var Green = new int[256];
                     var Red = new int[256];
                     var Luminance = new int[256];
-                    IReadOnlyDictionary<IMagickColor<byte>, int> h = image.Histogram();
+                    IReadOnlyDictionary<IMagickColor<byte>, uint> h = image.Histogram();
                     foreach (var i in h)
                     {
                         byte R = i.Key.R;
                         byte G = i.Key.G;
                         byte B = i.Key.B;
-                        Blue[B] += i.Value;
-                        Green[G] += i.Value;
-                        Red[R] += i.Value;
+                        Blue[B] += (int)i.Value;
+                        Green[G] += (int)i.Value;
+                        Red[R] += (int)i.Value;
                         int lum = (R + R + R + B + G + G + G + G) >> 3;
-                        Luminance[lum] += i.Value;
+                        Luminance[lum] += (int)i.Value;
                     }
                     fileInfo.HistogramBlue = Blue;
                     fileInfo.HistogramGreen = Green;
