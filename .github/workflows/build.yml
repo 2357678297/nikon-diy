@@ -1,0 +1,46 @@
+name: build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET 8
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Restore
+        run: dotnet restore CameraControl.sln
+        env:
+          NUGET_PACKAGES: ${{ github.workspace }}/.nuget/packages
+
+      - name: Cache NuGet
+        uses: actions/cache@v4
+        with:
+          path: ${{ github.workspace }}/.nuget/packages
+          key: nuget-${{ runner.os }}-${{ hashFiles('**/*.csproj') }}
+          restore-keys: nuget-${{ runner.os }}-
+
+      - name: Build migrated projects (Release)
+        run: |
+          dotnet build CameraControl.Devices/CameraControl.Devices.csproj -c Release --no-restore
+          dotnet build CameraControl.Core/CameraControl.Core.csproj -c Release --no-restore
+          dotnet build CameraControl/CameraControl.csproj -c Release --no-restore
+          dotnet build CameraControlCmd/CameraControlCmd.csproj -c Release --no-restore
+          dotnet build CameraControl.PluginManager/CameraControl.PluginManager.csproj -c Release --no-restore
+          dotnet build CameraControlRemoteCmd/CameraControlRemoteCmd.csproj -c Release --no-restore
+          dotnet build CameraControl.Plugins/CameraControl.Plugins.csproj -c Release --no-restore
+          dotnet build CameraControl.Trigger/CameraControl.Trigger.csproj -c Release --no-restore
+          dotnet build MtpTester/MtpTester.csproj -c Release --no-restore
+          dotnet build PhotoBooth/PhotoBooth.csproj -c Release --no-restore
+          dotnet build DccObsPlugin/DccObsPlugin.csproj -c Release --no-restore
+        shell: bash
