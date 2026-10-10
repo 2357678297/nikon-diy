@@ -32,7 +32,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Web.UI;
 using System.Windows;
 using System.Windows.Input;
 using CameraControl.Core.Interfaces;
@@ -96,8 +95,8 @@ namespace CameraControl.Core.Classes
             //new PaletteHelper().SetLightDark(ServiceProvider.Settings.CurrentThemeNameNew.StartsWith("Dark"));
 
             var paletteHelper = new PaletteHelper();
-            ITheme theme = paletteHelper.GetTheme();
-            IBaseTheme baseTheme = ServiceProvider.Settings.CurrentThemeNameNew.StartsWith("Dark") ? new MaterialDesignDarkTheme() : (IBaseTheme)new MaterialDesignLightTheme();
+            var theme = paletteHelper.GetTheme();
+            BaseTheme baseTheme = ServiceProvider.Settings.CurrentThemeNameNew.StartsWith("Dark") ? BaseTheme.Dark : BaseTheme.Light;
             theme.SetBaseTheme(baseTheme);
             foreach (var item in new SwatchesProvider().Swatches)
             {

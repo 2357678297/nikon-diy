@@ -1,4 +1,4 @@
-﻿#region Licence
+#region Licence
 
 // Distributed under MIT License
 // ===========================================================
@@ -199,15 +199,15 @@ namespace CameraControl.Core.Classes
                     }
                 }
 
-                var slc = context.Request.QueryString["slc"];
+                var slc = context.Request.QueryString("slc");
                 if (ServiceProvider.Settings.AllowWebserverActions && !string.IsNullOrEmpty(slc))
                 {
                     string response = "";
                     try
                     {
                         var processor = new CommandLineProcessor();
-                        processor.SetCamera(context.Request.QueryString["camera"]);
-                        var resp = processor.Pharse(new[] { context.Request.QueryString["slc"], context.Request.QueryString["param1"], context.Request.QueryString["param2"] });
+                        processor.SetCamera(context.Request.QueryString("camera"));
+                        var resp = processor.Pharse(new[] { context.Request.QueryString("slc"), context.Request.QueryString("param1"), context.Request.QueryString("param2") });
                         var list = resp as IEnumerable<string>;
                         if (list != null)
                         {
@@ -300,8 +300,8 @@ namespace CameraControl.Core.Classes
                         SendFile(context, fullpath);
                     }
                 }
-                string cmd = context.Request.QueryString["CMD"];
-                string param = context.Request.QueryString["PARAM"];
+                string cmd = context.Request.QueryString("CMD");
+                string param = context.Request.QueryString("PARAM");
                 if (ServiceProvider.Settings.AllowWebserverActions && !string.IsNullOrEmpty(cmd))
                     ServiceProvider.WindowsManager.ExecuteCommand(cmd, param);
             }
@@ -421,6 +421,31 @@ namespace CameraControl.Core.Classes
             return Path.Combine(Settings.WebServerFolder,
                 Uri.UnescapeDataString(uri.AbsolutePath.Remove(0, 1)).TrimStart(new[] {'/'})
                     .Replace('/', '\\'));
+        }
+    }
+}
+
+namespace CameraControl.Core.Classes
+{
+    /// <summary>
+    /// Griffin.WebServer 0.5.3 的 IHttpRequest 接口没有 QueryString 属性(具体类型 HttpRequest 才有)。
+    /// 迁移 net8 后接口类型收紧导致编译失败,在此按 Uri.Query 自行解析,行为与旧版一致。
+    /// </summary>
+    public static class HttpRequestQueryExtensions
+    {
+        public static string QueryString(this Griffin.Net.Protocols.Http.IHttpRequest request, string key)
+        {
+            var query = request.Uri?.Query;
+            if (string.IsNullOrEmpty(query))
+                return null;
+            query = query.TrimStart('?');
+            foreach (var pair in query.Split('&'))
+            {
+                var kv = pair.Split(new[] { '=' }, 2);
+                if (string.Equals(kv[0], key, System.StringComparison.OrdinalIgnoreCase))
+                    return kv.Length > 1 ? System.Uri.UnescapeDataString(kv[1]) : string.Empty;
+            }
+            return null;
         }
     }
 }

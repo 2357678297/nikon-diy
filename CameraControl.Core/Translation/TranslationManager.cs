@@ -102,9 +102,9 @@ namespace CameraControl.Core.Translation
                     _translations = new Dictionary<string, string>();
                     Type transType = typeof (TranslationStrings);
                     FieldInfo[] fields = transType.GetFields(BindingFlags.Public | BindingFlags.Static);
-                    foreach (FieldInfo field in fields)
+                    foreach (FieldInfo fld in fields)
                     {
-                        _translations.Add(field.Name, field.GetValue(transType).ToString());
+                        _translations.Add(fld.Name, fld.GetValue(transType).ToString());
                     }
                 }
                 return _translations;
