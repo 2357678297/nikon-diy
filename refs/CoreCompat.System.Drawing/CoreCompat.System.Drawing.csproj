@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>CoreCompat.System.Drawing</AssemblyName>
+    <RootNamespace>CoreCompat.System.Drawing</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <NoWarn>$(NoWarn);CS7011</NoWarn>
+  </PropertyGroup>
+
+  <!-- 只做类型转发,不需要引用目标类型所在的运行时程序集;
+       用 ref-only 方式引用 System.Drawing.Common 以获取类型元数据 -->
+  <ItemGroup>
+    <PackageReference Include="System.Drawing.Common" Version="8.0.0" />
+  </ItemGroup>
+
+</Project>

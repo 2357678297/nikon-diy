@@ -1,4 +1,4 @@
-﻿using CameraControl.Devices.Classes;
+using CameraControl.Devices.Classes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -58,7 +58,7 @@ namespace CameraControl.Devices.Nikon
 
         private void NormalFocusMode_ValueChanged(object sender, string key, long val)
         {
-            SetProperty(CONST_CMD_SetDevicePropValue, BitConverter.GetBytes((sbyte)val),
+            SetProperty(CONST_CMD_SetDevicePropValue, (((sbyte)(val & 0xFF))).GetBytes8(),
                         CONST_PROP_AFModeSelect);
         }
 

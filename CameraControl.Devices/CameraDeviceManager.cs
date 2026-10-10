@@ -49,7 +49,6 @@ using PortableDeviceLib;
 using WIA;
 using Accord.Video.DirectShow;
 using System.Management;
-using System.Management.Instrumentation;
 
 #endregion
 

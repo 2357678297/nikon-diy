@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
@@ -81,7 +81,7 @@ namespace CameraControl.Devices.Others
             try
             {
                 _operationInProgress = true;
-                Image img = (Bitmap)eventargs.Frame.Clone();
+                Image img = (System.Drawing.Bitmap)eventargs.Frame.Clone();
                 MemoryStream ms = new MemoryStream();
                 img.Save(ms, ImageFormat.Jpeg);
                 ms.Seek(0, SeekOrigin.Begin);
@@ -181,7 +181,7 @@ namespace CameraControl.Devices.Others
         {
             try
             {
-                System.Drawing.Image img = (Bitmap)eventargs.Frame.Clone();
+                System.Drawing.Image img = (System.Drawing.Bitmap)eventargs.Frame.Clone();
                 using (MemoryStream ms = new MemoryStream())
                 {
                     img.Save(ms, ImageFormat.Jpeg);

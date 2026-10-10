@@ -727,7 +727,7 @@ namespace CameraControl.Devices.Nikon
             }
             res.ReloadValues();
             res.ValueChanged +=
-                (sender, key, val) => SetProperty(CONST_CMD_SetDevicePropValue, BitConverter.GetBytes((sbyte)val), res.Code);
+                (sender, key, val) => SetProperty(CONST_CMD_SetDevicePropValue, (((sbyte)(val & 0xFF))).GetBytes8(), res.Code);
             return res;
         }
 
@@ -1608,7 +1608,7 @@ namespace CameraControl.Devices.Nikon
 
         protected void CompressionSetting_ValueChanged(object sender, string key, long val)
         {
-            SetProperty(CONST_CMD_SetDevicePropValue, BitConverter.GetBytes((byte) val),
+            SetProperty(CONST_CMD_SetDevicePropValue, (((byte)(val & 0xFF))).GetBytes8(),
                         CONST_PROP_CompressionSetting);
         }
 
@@ -1684,13 +1684,13 @@ namespace CameraControl.Devices.Nikon
 
         void LiveViewFocusMode_ValueChanged(object sender, string key, long val)
         {
-            SetProperty(CONST_CMD_SetDevicePropValue, BitConverter.GetBytes((sbyte)val),
+            SetProperty(CONST_CMD_SetDevicePropValue, (((sbyte)(val & 0xFF))).GetBytes8(),
                         CONST_PROP_AfModeAtLiveView);            
         }
 
         private void NormalFocusMode_ValueChanged(object sender, string key, long val)
         {
-            SetProperty(CONST_CMD_SetDevicePropValue, BitConverter.GetBytes((sbyte) val),
+            SetProperty(CONST_CMD_SetDevicePropValue, (((sbyte)(val & 0xFF))).GetBytes8(),
                         CONST_PROP_AFModeSelect);
         }
 
