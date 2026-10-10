@@ -96,7 +96,7 @@ namespace CameraControl.Core.Classes
 
             var paletteHelper = new PaletteHelper();
             var theme = paletteHelper.GetTheme();
-            BaseTheme baseTheme = ServiceProvider.Settings.CurrentThemeNameNew.StartsWith("Dark") ? BaseTheme.Dark : BaseTheme.Light;
+            IBaseTheme baseTheme = ServiceProvider.Settings.CurrentThemeNameNew.StartsWith("Dark") ? (IBaseTheme)new MaterialDesignDarkTheme() : (IBaseTheme)new MaterialDesignLightTheme();
             theme.SetBaseTheme(baseTheme);
             foreach (var item in new SwatchesProvider().Swatches)
             {
