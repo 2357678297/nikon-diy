@@ -100,4 +100,9 @@
     <PackageReference Include="ZXing.Net" Version="0.16.10" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Resource Include="images\**\*" />
+    <Resource Include="logo.ico" />
+  </ItemGroup>
+
 </Project>

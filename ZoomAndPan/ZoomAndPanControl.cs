@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
@@ -165,6 +165,9 @@ namespace ZoomAndPan
         protected override Size ArrangeOverride(Size arrangeBounds)
         {
             var size = base.ArrangeOverride(this.DesiredSize);
+
+            if (_content == null)
+                return size;
 
             if (_content.DesiredSize != _unScaledExtent)
             {

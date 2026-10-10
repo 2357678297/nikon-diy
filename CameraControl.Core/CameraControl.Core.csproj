@@ -16,6 +16,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <!-- 第三工程:手机浏览器遥控端(ASP.NET Core minimal API + WebSocket) -->
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="Interop.WIA">
       <HintPath>..\refs\Interop.WIA.dll</HintPath>
       <EmbedInteropTypes>true</EmbedInteropTypes>

@@ -49,7 +49,7 @@ namespace CameraControl.Core.Classes
 {
     public class TriggerClass
     {
-        public WebServer WebServer { get; set; }
+        public Web.ModernWebServer WebServer { get; set; }
         public KeyboardHook KeyboardHook { get; set; }
         private static bool _eventIsBusy = false;
         private static bool _altPressed = false;
@@ -57,7 +57,7 @@ namespace CameraControl.Core.Classes
         private Process _ngrok_process = null;
         public TriggerClass()
         {
-            WebServer = new WebServer();
+            WebServer = new Web.ModernWebServer();
             KeyboardHook = new KeyboardHook("DCC");
         }
 
@@ -70,7 +70,7 @@ namespace CameraControl.Core.Classes
                 KeyboardHook.KeyUpEvent += KeyUp;
                 if (ServiceProvider.Settings.UseWebserver)
                 {
-                    WebServer.Start(ServiceProvider.Settings.WebserverPort);
+                    new Web.ModernWebServer().Start(ServiceProvider.Settings.WebserverPort);
                     string file = Path.Combine(Settings.ApplicationFolder, "ngrok.exe");
                     _ngrok_process = PhotoUtils.Run(file, "http " + ServiceProvider.Settings.WebserverPort,
                         ProcessWindowStyle.Hidden);
