@@ -1094,7 +1094,8 @@ namespace CameraControl.Core.Classes
             RotateIndex = 0;
             FullScreenColor = Colors.Black;
             ShowFullscreenControls = true;
-            SelectedLanguage = Thread.CurrentThread.CurrentCulture.Name;
+            // 默认中文(用户要求);原逻辑为跟随系统区域
+            SelectedLanguage = "zh-CN";
             FocusMoveStep = 50;
             MotionBlockSize = 40;
             UseExternalViewer = false;
