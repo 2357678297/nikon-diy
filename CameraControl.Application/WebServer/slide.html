@@ -18,7 +18,7 @@
 
 <div class="submenu submenu2">
         <button id="btn" class="ui-button ui-button-text-only ui-widget ui-state-default ui-corner-all" style="font-size: 300%;" onClick="window.location.reload()">
-        <span class="ui-button-text">Slideshow</span></button>
+        <span class="ui-button-text">幻灯片</span></button>
 </div>
 <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
     @@image_list@@
@@ -54,9 +54,9 @@
 
                 <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
 
-                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--share" title="分享"></button>
 
-                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--fs" title="切换全屏"></button>
 
                 <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
 
@@ -367,7 +367,7 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
         // Pass data to PhotoSwipe and initialize it
         gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
         if ($('.pswp__button--autoplay').length === 0)
-        $('<button class="pswp__button pswp__button--autoplay stop" title="AutoPlay"></button>').insertAfter('.pswp__button--zoom');
+        $('<button class="pswp__button pswp__button--autoplay stop" title="自动播放"></button>').insertAfter('.pswp__button--zoom');
         
         var _autoplayId = setInterval(function() { gallery.next(); }, 8000);
         $('.pswp__button--autoplay').on('click', function(event) {
