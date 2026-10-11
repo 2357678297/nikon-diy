@@ -15,7 +15,7 @@
             <RowDefinition Height="43*" />
         </Grid.RowDefinitions>
         <Button Content="{translation:TranslateExtension ButtonClose}" Grid.Row="1" HorizontalAlignment="Right" Margin="0,0,12,12" Name="button1" Width="75" Height="25" VerticalAlignment="Bottom" Click="button1_Click" />
-        <Button Content="Download" Grid.Row="1" Height="23" HorizontalAlignment="Right" Margin="0,0,107,12" Name="button2" VerticalAlignment="Bottom" Width="95" Click="button2_Click" />
+        <Button Content="{translation:TranslateExtension UiDownload}" Grid.Row="1" Height="23" HorizontalAlignment="Right" Margin="0,0,107,12" Name="button2" VerticalAlignment="Bottom" Width="95" Click="button2_Click" />
         <WebBrowser Name="webBrowser" />
     </Grid>
 </Window>

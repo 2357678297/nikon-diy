@@ -19,18 +19,18 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Menu Name="menu2">
-            <MenuItem Header="File" >
+            <MenuItem Header="{translation:TranslateExtension UiFile}" >
                 <MenuItem Header="New" Name="mnu_new"/>
                 <MenuItem Header="Open ..." Click="MenuItem_Click"/>
                 <MenuItem Header="{translation:TranslateExtension ButtonSave}" Name="mnu_save" Click="mnu_save_Click" />
                 <MenuItem Header="Save as ..." Name="mnu_save_as" Click="mnu_save_as_Click" />
             </MenuItem>
-            <MenuItem Header="Verify" Name="mnu_verify" Click="mnu_verify_Click" />
+            <MenuItem Header="{translation:TranslateExtension UiVerify}" Name="mnu_verify" Click="mnu_verify_Click" />
             <MenuItem Header="Run"  Name="mnu_run" Click="mnu_run_Click" />
-            <MenuItem Header="Stop" Name="mnu_stop" Click="mnu_stop_Click" />
+            <MenuItem Header="{translation:TranslateExtension UiStop}" Name="mnu_stop" Click="mnu_stop_Click" />
         </Menu>
         <TabControl Grid.Row="1" Name="TabControl">
-            <TabItem Header="Xml Script" Name="XmTabItem">
+            <TabItem Header="{translation:TranslateExtension UiXmlScript}" Name="XmTabItem">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="0" />
@@ -52,7 +52,7 @@
                     <GridSplitter Grid.Row="2" HorizontalAlignment="Stretch" Name="gridSplitter1" />
                 </Grid>
             </TabItem>
-            <TabItem Header="Single line command">
+            <TabItem Header="{translation:TranslateExtension UiSingleLineCommand}">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="698*"/>
@@ -66,12 +66,12 @@
                     </Grid.RowDefinitions>
                     <TextBox Name="TextBoxCmd" Margin="3" KeyDown="TextBoxCmd_KeyDown"/>
                     <Button Grid.Row="0" Grid.Column="1" Content="{translation:TranslateExtension ButtonExecute}" Click="Button_Click" Margin="3"/>
-                    <Label Grid.Row="1" Content="More help" FontStyle="Italic" Cursor="Hand" MouseDown="Label_MouseDown"/>
+                    <Label Grid.Row="1" Content="{translation:TranslateExtension UiMoreHelp}" FontStyle="Italic" Cursor="Hand" MouseDown="Label_MouseDown"/>
                     <ListBox Grid.Row="3" Name="lst_cmd" MouseDoubleClick="lst_cmd_MouseDoubleClick" Grid.ColumnSpan="2"/>
                     <TextBox Grid.Row="4" TextWrapping="Wrap" Text="" Name="TextBlockError" Grid.ColumnSpan="2"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Tcl script"  Name="TclTabItem">
+            <TabItem Header="{translation:TranslateExtension UiTclScript}"  Name="TclTabItem">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="0" />

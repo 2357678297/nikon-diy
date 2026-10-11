@@ -1,10 +1,11 @@
-﻿<Controls1:MetroWindow  x:Class="CameraControl.windows.FullScreenWnd"
+<Controls1:MetroWindow  x:Class="CameraControl.windows.FullScreenWnd"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Controls="clr-namespace:CameraControl.Controls"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                       xmlns:translation="clr-namespace:CameraControl.Core.Translation;assembly=CameraControl.Core" xmlns:Controls="clr-namespace:CameraControl.Controls"
         xmlns:Core="clr-namespace:CameraControl.Core;assembly=CameraControl.Core" ShowIconOnTitleBar="False" ShowTitleBar="False"
                        xmlns:Controls1="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
                        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-                       Title="FullScreenWnd" Height="460" Width="472" MouseDown="image1_MouseDown" Closing="MetroWindow_Closing" WindowStartupLocation="Manual" WindowState="Maximized" WindowStyle="None" ResizeMode="NoResize" IgnoreTaskbarOnMaximize="True" IsMaxRestoreButtonEnabled="False" ShowMinButton="False" ShowMaxRestoreButton="False" ShowSystemMenuOnRightClick="False">
+                       Title="{translation:TranslateExtension UiFullscreenwnd}" Height="460" Width="472" MouseDown="image1_MouseDown" Closing="MetroWindow_Closing" WindowStartupLocation="Manual" WindowState="Maximized" WindowStyle="None" ResizeMode="NoResize" IgnoreTaskbarOnMaximize="True" IsMaxRestoreButtonEnabled="False" ShowMinButton="False" ShowMaxRestoreButton="False" ShowSystemMenuOnRightClick="False">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>

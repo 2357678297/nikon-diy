@@ -1,10 +1,10 @@
-﻿<Window x:Class="CameraControl.windows.BarcodeWnd"
+<Window x:Class="CameraControl.windows.BarcodeWnd"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
         xmlns:viewModel="clr-namespace:CameraControl.ViewModel"
         xmlns:translation="clr-namespace:CameraControl.Core.Translation;assembly=CameraControl.Core"
-        Title="Barcode" Height="600" Width="800" Closing="MetroWindow_Closing" WindowStartupLocation="CenterOwner" ShowInTaskbar="False" 
+        Title="{translation:TranslateExtension UiBarcode}" Height="600" Width="800" Closing="MetroWindow_Closing" WindowStartupLocation="CenterOwner" ShowInTaskbar="False" 
              TextElement.Foreground="{DynamicResource MaterialDesignBody}"
      TextElement.FontWeight="Regular"
      TextElement.FontSize="13"
@@ -32,7 +32,7 @@
                     <StackPanel>
                         <CheckBox Content="{translation:TranslateExtension LabelCaptureAfterScan}" Margin="4" IsChecked="{Binding CaptureOnEnter}"/>
                         <CheckBox Content="{translation:TranslateExtension LabelKeepWindowActive}" Margin="4" IsChecked="{Binding KeepActive}"/>
-                        <CheckBox Content="Capture with all cameras" Margin="4" IsChecked="{Binding CaptureAllCamera}"/>
+                        <CheckBox Content="{translation:TranslateExtension UiCaptureWithAllCameras}" Margin="4" IsChecked="{Binding CaptureAllCamera}"/>
                     </StackPanel>
                 </StackPanel>
 

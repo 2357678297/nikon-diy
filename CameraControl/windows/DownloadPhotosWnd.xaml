@@ -145,15 +145,15 @@
                 <Button Content="{translation:TranslateExtension LabelNone}" Name="btn_none" Click="btn_none_Click" Grid.Column="1" Margin="4" />
                 <Button Content="{translation:TranslateExtension LabelInvert}" Name="btn_invert" Click="btn_invert_Click" Grid.Column="2" Margin="4"  />
                 <Label Content="Index:" Height="28" HorizontalAlignment="Right" Margin="4" Name="label1" VerticalAlignment="Center" Grid.Row="1" />
-                <Button Content="Select" Grid.Column="2" Name="btn_select" Click="btn_select_Click" Margin="4" Grid.Row="1" />
+                <Button Content="{translation:TranslateExtension MenuSelect}" Grid.Column="2" Name="btn_select" Click="btn_select_Click" Margin="4" Grid.Row="1" />
                 <Controls:NumericUpDown Grid.Column="1" Name="txt_indx" Value="1" HorizontalContentAlignment="Right" Margin="4" Grid.Row="1" Minimum="0"/>
             </Grid>
         </materialDesign:Card>
         <materialDesign:Card Grid.Column="1" Grid.Row="1" Margin="4">
             <StackPanel Margin="5">
                 <CheckBox Content="{T:TranslateExtension LabelDeleteFilesAfterTransfer}" Name="chk_delete" Margin="3"/>
-                <CheckBox Content="Format all camera cards" Name="chk_format" Margin="3"/>
-                <CheckBox Content="Uncheck dublicates" Name="chk_similar" Margin="3" IsChecked="True"/>
+                <CheckBox Content="{translation:TranslateExtension UiFormatAllCameraCards}" Name="chk_format" Margin="3"/>
+                <CheckBox Content="{translation:TranslateExtension UiUncheckDublicates}" Name="chk_similar" Margin="3" IsChecked="True"/>
                 <CheckBox Content="{T:TranslateExtension LabelSeriesAsIndex}" Name="chk_series" Margin="3" IsChecked="True"/>
             </StackPanel>
         </materialDesign:Card>

@@ -28,9 +28,9 @@
         </Grid.RowDefinitions>
         <ListBox x:Name="lbDevices" ItemsSource="{Binding GoProBluetoothHelper.Devices}" DisplayMemberPath="DisplayName" Margin="16" SelectedItem="{Binding SelectedItem}" />
         <StackPanel Grid.Column="1">
-            <Button Margin="4" Content="ReScan" Command="{Binding ReScanCommand}"/>
-            <Button Margin="4" Content="Pair" Command="{Binding PairCommand}" IsEnabled="{Binding IsSelected}"/>
-            <Button Margin="4" Content="Connect" Command="{Binding ConnectCommand}" IsEnabled="{Binding IsSelected}"/>
+            <Button Margin="4" Content="{translation:TranslateExtension UiRescan}" Command="{Binding ReScanCommand}"/>
+            <Button Margin="4" Content="{translation:TranslateExtension UiPair}" Command="{Binding PairCommand}" IsEnabled="{Binding IsSelected}"/>
+            <Button Margin="4" Content="{translation:TranslateExtension ButtonConnect}" Command="{Binding ConnectCommand}" IsEnabled="{Binding IsSelected}"/>
         </StackPanel>
         <TextBlock Margin="4" Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding GoProBluetoothHelper.Message}"/>
     </Grid> 

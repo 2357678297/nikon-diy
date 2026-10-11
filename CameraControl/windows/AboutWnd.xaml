@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                        xmlns:translation="clr-namespace:CameraControl.Core.Translation;assembly=CameraControl.Core"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-        Title="About" Height="488" Width="579" WindowStyle="ToolWindow" 
+        Title="{translation:TranslateExtension UiAbout}" Height="488" Width="579" WindowStyle="ToolWindow" 
                       WindowStartupLocation="CenterScreen"
                       TextElement.Foreground="{DynamicResource MaterialDesignBody}"
                       TextElement.FontWeight="Regular"
@@ -47,7 +47,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,<Li
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN<LineBreak/>
 THE SOFTWARE." <LineBreak/>
         </TextBlock>
-        <Button Content="Home page" Grid.Row="1"  HorizontalAlignment="Left" Margin="16" Name="button1" VerticalAlignment="Top" Width="120" Click="button1_Click" />
+        <Button Content="{translation:TranslateExtension UiHomePage}" Grid.Row="1"  HorizontalAlignment="Left" Margin="16" Name="button1" VerticalAlignment="Top" Width="120" Click="button1_Click" />
         <Button Content="{translation:TranslateExtension MenuDonate}" Grid.Row="1"  HorizontalAlignment="Right" Margin="16" Name="btn_donate" VerticalAlignment="Top" Width="120" Click="btn_donate_Click" />
     </Grid>
 </Window>

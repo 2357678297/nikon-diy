@@ -312,7 +312,7 @@
                 <ScrollViewer VerticalScrollBarVisibility="Auto" PanningMode="Both" PanningRatio="2">
                     <StackPanel>
                         <materialDesign:Card Margin="4">
-                            <Expander Header="Preview" IsExpanded="True" Visibility="{Binding Source={x:Static Member=Core:ServiceProvider.Branding}, Path=ShowPreviewPanel, Converter={StaticResource BooleanToVisibilityConverter1}}">
+                            <Expander Header="{translation:TranslateExtension UiPreview}" IsExpanded="True" Visibility="{Binding Source={x:Static Member=Core:ServiceProvider.Branding}, Path=ShowPreviewPanel, Converter={StaticResource BooleanToVisibilityConverter1}}">
                                 <Grid>
                                     <Image x:Name="PreviewImage" Source="{Binding Source={x:Static Member=Core:ServiceProvider.Settings}, Path=SelectedBitmap.Preview}" Height="185" Margin="4">
                                         <Image.LayoutTransform>
@@ -409,7 +409,7 @@
                                                         <materialDesign:PopupBox Grid.Column="1" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" HorizontalAlignment="Right" VerticalAlignment="Top"  PopupMode="Click">
                                                             <StackPanel>
                                                                 <Button Content="{translation:TranslateExtension ButtonDelete}" Command="{Binding Source={x:Static Member=Core:ServiceProvider.Settings}, Path=DefaultSession.RemovePluginCommand}" CommandParameter="{Binding}"/>
-                                                                <Button Content="Settings" Command="{Binding ConfigurePluginCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type my:MainWindow}}}" CommandParameter="{Binding}"/>
+                                                                <Button Content="{translation:TranslateExtension UiSettings}" Command="{Binding ConfigurePluginCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type my:MainWindow}}}" CommandParameter="{Binding}"/>
                                                                 <Button Content="{translation:TranslateExtension ButtonExecute}"  Command="{Binding Source={x:Static Member=Core:ServiceProvider.Settings}, Path=DefaultSession.ApplyPluginCommand}" CommandParameter="{Binding}"/>
                                                             </StackPanel>
                                                         </materialDesign:PopupBox>

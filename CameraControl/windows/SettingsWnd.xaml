@@ -86,7 +86,7 @@
                             <CheckBox Margin="4" IsChecked="{Binding Autorotate}" Content="{T:TranslateExtension LabelAutorotate}" />
                             <CheckBox Margin="4" IsChecked="{Binding DontLoadThumbnails}" Content="{T:TranslateExtension LabelDontLoadThumbs}" />
                             <CheckBox Margin="4" IsChecked="{Binding LoadFullRespreview}" Content="{T:TranslateExtension LabelFullResPreview}" />
-                            <CheckBox Margin="4" IsChecked="{Binding SkipAddingFileToSession}" Content="Skip adding file to session" />
+                            <CheckBox Margin="4" IsChecked="{Binding SkipAddingFileToSession}" Content="{translation:TranslateExtension UiSkipAddingFileToSession}" />
                             
                             <ComboBox SelectedIndex="{Binding RotateIndex}" Margin="4"
                                       materialDesign:HintAssist.Hint="{T:TranslateExtension LabelRotateImage}"
@@ -158,7 +158,7 @@
                                             <CheckBox IsChecked="{Binding Path=Alt}" Content="Alt" Margin="5"/>
                                             <CheckBox IsChecked="{Binding Path=Ctrl}" Content="Ctrl" Margin="5"/>
                                             <ComboBox SelectedItem="{Binding Path=Key}" ItemsSource="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=my1:SettingsWnd, AncestorLevel=1}, Path=AvailableKeys}" Width="150" Margin="2"/>
-                                            <CheckBox IsChecked="{Binding Path=Global}" Content="Global" Margin="5" ToolTip="{translation:TranslateExtension ToolTipSystemWide}"/>
+                                            <CheckBox IsChecked="{Binding Path=Global}" Content="{translation:TranslateExtension UiGlobal}" Margin="5" ToolTip="{translation:TranslateExtension ToolTipSystemWide}"/>
                                         </StackPanel>
                                     </DataTemplate>
                                 </ItemsControl.ItemTemplate>
@@ -178,7 +178,7 @@
                             <CheckBox Content="{T:TranslateExtension LabelAllowWebCommands}" IsChecked="{Binding AllowWebserverActions}" Margin="4" IsEnabled="{Binding UseWebserver}"/>
                             <CheckBox Content="{T:TranslateExtension LabelPublicWebserver}" IsChecked="{Binding PublicWebserver}" Margin="4" IsEnabled="{Binding UseWebserver}"/>
                             <StackPanel Orientation="Horizontal">
-                                <Label Content="MJPEG Stream address " Margin="4"/>
+                                <Label Content="{translation:TranslateExtension UiMjpegStreamAddress}" Margin="4"/>
                                 <TextBox Text="http://127.0.0.1:5514/live" VerticalAlignment="Center" IsReadOnly="True"/>
                             </StackPanel>
                             <Label    Content="{T:TranslateExtension ReStartToolTip}" FontStyle="Italic"/>

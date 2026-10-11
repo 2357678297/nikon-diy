@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                        xmlns:translation="clr-namespace:CameraControl.Core.Translation;assembly=CameraControl.Core"
                       xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-                      Title="ScriptCommandEdit" Height="277" Width="484" Topmost="True" WindowStartupLocation="CenterScreen"
+                      Title="{translation:TranslateExtension UiScriptcommandedit}" Height="277" Width="484" Topmost="True" WindowStartupLocation="CenterScreen"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
      TextElement.FontWeight="Regular"
      TextElement.FontSize="13"

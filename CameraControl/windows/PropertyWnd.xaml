@@ -1,10 +1,11 @@
-﻿<Window x:Class="CameraControl.windows.PropertyWnd"
+<Window x:Class="CameraControl.windows.PropertyWnd"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                       xmlns:translation="clr-namespace:CameraControl.Core.Translation;assembly=CameraControl.Core"
         xmlns:Core="clr-namespace:CameraControl.Core;assembly=CameraControl.Core"
                      xmlns:ontrols="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
                      xmlns:T="clr-namespace:CameraControl.Core.Translation;assembly=CameraControl.Core"
-                     xmlns:my1="clr-namespace:CameraControl.windows" Title="Image Propert" Height="353" Width="671" ShowInTaskbar="False" Topmost="True" WindowStyle="None" AllowsTransparency="True" Closing="Window_Closing"
+                     xmlns:my1="clr-namespace:CameraControl.windows" Title="{translation:TranslateExtension UiImagePropert}" Height="353" Width="671" ShowInTaskbar="False" Topmost="True" WindowStyle="None" AllowsTransparency="True" Closing="Window_Closing"
                      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
      TextElement.FontWeight="Regular"
      TextElement.FontSize="13"
@@ -57,16 +58,16 @@
                 <RowDefinition Height="150*" />
             </Grid.RowDefinitions>
             <!--<TabControl Name="tabControl1" Background="{x:Null}" Grid.ColumnSpan="2">
-                <TabItem Header="Histogram" Name="tabItem1">-->
+                <TabItem Header="{translation:TranslateExtension UiHistogram}" Name="tabItem1">-->
             <GroupBox Grid.RowSpan="2" Header="{T:TranslateExtension LabelExif}">
                 <ListBox ItemsSource="{Binding Path=Settings.SelectedBitmap.Metadata}" Background="{x:Null}" Grid.RowSpan="2" Margin="2" ScrollViewer.HorizontalScrollBarVisibility="Hidden"/>
             </GroupBox>
-            <GroupBox Grid.Column="1" Header="Luminosity" BorderThickness="0">
+            <GroupBox Grid.Column="1" Header="{translation:TranslateExtension UiLuminosity}" BorderThickness="0">
                 <Border BorderThickness="1" BorderBrush="Black" Background="White">
                     <Polygon Points="{Binding Path=Settings.SelectedBitmap.LuminanceHistogramPoints}" Stretch="Fill" Fill="Black" Opacity="0.8" />
                 </Border>
             </GroupBox>
-            <GroupBox Grid.Column="1" Grid.Row="1" Header="Color" BorderThickness="0">
+            <GroupBox Grid.Column="1" Grid.Row="1" Header="{translation:TranslateExtension UiColor}" BorderThickness="0">
                 <Border BorderThickness="1" BorderBrush="Black" Background="White" Margin="4">
                     <Grid>
                         <Polygon Points="{Binding Path=Settings.SelectedBitmap.RedColorHistogramPoints}" Stretch="Fill" Fill="Red" Opacity="0.5" />
@@ -96,7 +97,7 @@
                 </Grid>
             </GroupBox>
             <!--</TabItem>
-                <TabItem Header="Metadata" Name="tabItem2">-->
+                <TabItem Header="{translation:TranslateExtension UiMetadata}" Name="tabItem2">-->
             <!--</TabItem>
             </TabControl>-->
         </Grid>
