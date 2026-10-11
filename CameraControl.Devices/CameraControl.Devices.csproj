@@ -39,7 +39,7 @@
     <PackageReference Include="Accord.Video.DirectShow" Version="3.8.2-alpha" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Rssdp" Version="2.0.9" />
-    <PackageReference Include="System.Drawing.Common" Version="8.0.0" />
+    <PackageReference Include="System.Drawing.Common" Version="10.0.12" />
     <PackageReference Include="System.Management" Version="8.0.0" />
     <PackageReference Include="WebSocketSharp" Version="1.0.3-rc11" />
     <!-- net8-windows10.0.22621 目标框架原生内置 WinRT(API),替代 Microsoft.Windows.SDK.Contracts -->
