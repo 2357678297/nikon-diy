@@ -32,6 +32,7 @@ jobs:
           NUGET_PACKAGES: ${{ github.workspace }}/.nuget/packages
         run: |
           projects=(
+            refs/CoreCompat.System.Drawing/CoreCompat.System.Drawing.csproj
             PortableDeviceLib/PortableDeviceLib.csproj
             Canon.Eos.Framework/Canon.Eos.Framework.csproj
             CameraControl.Devices/CameraControl.Devices.csproj
