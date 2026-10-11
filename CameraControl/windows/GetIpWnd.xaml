@@ -1,4 +1,4 @@
-﻿<Window
+<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
@@ -7,7 +7,7 @@
                        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
                        xmlns:translation="clr-namespace:CameraControl.Core.Translation;assembly=CameraControl.Core"
                        x:Class="CameraControl.windows.GetIpWnd"
-                       Title="Connect" Height="180" Width="303" Loaded="MetroWindow_Loaded" WindowStartupLocation="CenterScreen" ShowInTaskbar="False" 
+                       Title="{translation:TranslateExtension WindowConnect}" Height="180" Width="303" Loaded="MetroWindow_Loaded" WindowStartupLocation="CenterScreen" ShowInTaskbar="False" 
     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
      TextElement.FontWeight="Regular"
      TextElement.FontSize="13"
@@ -27,6 +27,6 @@
         <TextBox Grid.Row="1" Margin="4" x:Name="txt_ip" Text="{Binding Ip, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:GetIpWnd}}}" FontSize="20"
                  materialDesign:HintAssist.Hint="{translation:TranslateExtension LabelIpAddreess}"
                  Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
-        <Button Content="Connect" Grid.Row="2" x:Name="btn_conect" Margin="4" Click="btn_conect_Click" />
+        <Button Content="{translation:TranslateExtension ButtonConnect}" Grid.Row="2" x:Name="btn_conect" Margin="4" Click="btn_conect_Click" />
     </Grid>
 </Window>

@@ -1,6 +1,7 @@
-﻿<Window x:Class="CameraControl.windows.BulbWnd"
+<Window x:Class="CameraControl.windows.BulbWnd"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                       xmlns:translation="clr-namespace:CameraControl.Core.Translation;assembly=CameraControl.Core"
         Title="Bulb" Height="520" Width="800" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen"  xmlns:my="clr-namespace:CameraControl.windows"
         xmlns:Core="clr-namespace:CameraControl.Core;assembly=CameraControl.Core"
                       xmlns:T="clr-namespace:CameraControl.Core.Translation;assembly=CameraControl.Core"
@@ -89,7 +90,7 @@
                     <MenuItem Header="Delete"                               
                               Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=my:BulbWnd, AncestorLevel=1}, Path=DelCommand}" 
                               CommandParameter="{Binding ElementName=lst_commands, Path=SelectedItem}"/>
-                    <MenuItem Header="Save" Click="MenuItem_Click" />
+                    <MenuItem Header="{translation:TranslateExtension ButtonSave}" Click="MenuItem_Click" />
                     <MenuItem Header="Load" Click="MenuItem_Click_1" />
                 </Menu>
                 <ListBox Grid.Row="1" ItemsSource="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=my:BulbWnd, AncestorLevel=1}, Path=DefaultScript.Commands}" Name="lst_commands">

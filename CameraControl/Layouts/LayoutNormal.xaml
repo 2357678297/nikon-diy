@@ -1,4 +1,4 @@
-﻿<Layouts:LayoutBase x:Class="CameraControl.Layouts.LayoutNormal"
+<Layouts:LayoutBase x:Class="CameraControl.Layouts.LayoutNormal"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -137,9 +137,9 @@
                     <!--<ToggleButton Height="40" Width="40" Content="[ : ]" Style="{DynamicResource MaterialDesignFlatPrimaryToggleButton}" IsChecked="{Binding ZoomToFocus}" ToolTip="{translation:TranslateExtension LabelZoomToFocus}" />
                     <ToggleButton Height="40" Width="40" Content="1:2" Style="{DynamicResource MaterialDesignFlatPrimaryToggleButton}" IsChecked="{Binding Zoom12}"/>
                     <ToggleButton Height="40" Width="40" Content="1:1" Style="{DynamicResource MaterialDesignFlatPrimaryToggleButton}" IsChecked="{Binding Zoom11}"/>
-                    <ToggleButton Height="40" Width="40" Content="Fit" Style="{DynamicResource MaterialDesignFlatPrimaryToggleButton}" IsChecked="{Binding ZoomFit}"/>-->      
+                    <ToggleButton Height="40" Width="40" Content="{translation:TranslateExtension ButtonFit}" Style="{DynamicResource MaterialDesignFlatPrimaryToggleButton}" IsChecked="{Binding ZoomFit}"/>-->      
                     <ComboBox Width="50" VerticalAlignment="Center" HorizontalContentAlignment="Right" SelectedIndex="{Binding ZoomIndex}">
-                        <ComboBoxItem Content="Fit"/>
+                        <ComboBoxItem Content="{translation:TranslateExtension ButtonFit}"/>
                         <ComboBoxItem Content="60 %"/>
                         <ComboBoxItem Content="100 %"/>
                         <ComboBoxItem Content="200 %"/>
@@ -156,7 +156,7 @@
                     <ContextMenu.DataContext>
                         <viewModel:MainMenuViewModel/>
                     </ContextMenu.DataContext>
-                    <MenuItem Header="Select" >
+                    <MenuItem Header="{translation:TranslateExtension MenuSelect}" >
                         <MenuItem Header="{translation:TranslateExtension LabelSelectNone}" Command="{Binding Path=SelectNoneCommand}"/>
                         <MenuItem Header="{translation:TranslateExtension LabelSelectAll}" Command="{Binding SendCommand}" CommandParameter="SelectAll_Image" InputGestureText="{classes:CommandShortcutExtensioncs SelectAll_Image}"/>
                         <MenuItem Header="{translation:TranslateExtension LabelSelectUnLiked}" Command="{Binding Path=SelectUnLiked}"/>
@@ -164,7 +164,7 @@
                         <MenuItem Header="{translation:TranslateExtension LabelSelectSeries}" Command="{Binding Path=SelectSeries}"/>
                         <MenuItem Header="{translation:TranslateExtension MenuInver}" Command="{Binding Path=SelectInvertCommand}"/>
                     </MenuItem>
-                    <MenuItem Header="Edit in" >
+                    <MenuItem Header="{translation:TranslateExtension MenuEditIn}" >
                         <MenuItem Header="Photoshop" Command="{Binding OpenInPhotoshopCommand}" Visibility="{Binding PhotoshopIsInstalled, Converter={StaticResource BooleanToVisibilityConverter}}"/>
                         <MenuItem Header="Lightroom" Command="{Binding OpenInLightroomCommand}" Visibility="{Binding LightroomIsInstalled, Converter={StaticResource BooleanToVisibilityConverter}}"/>
                     </MenuItem>
@@ -172,7 +172,7 @@
                     <MenuItem Header="{translation:TranslateExtension LabelDeleteFiles}" Command="{Binding SendCommand}" CommandParameter="Del_Image" />
                     <MenuItem Header="{translation:TranslateExtension LabelShowInExplorer}" Command="{Binding SendCommand}" CommandParameter="ViewExplorer" />
                     <MenuItem Header="{translation:TranslateExtension LabelOpenInExternalViewer}" Command="{Binding SendCommand}" CommandParameter="ViewExternal" />
-                    <MenuItem Header="Copy full path in clipboard" Name="mnu_copypath" Command="{Binding Path=CopyNameClipboardCommand}" />
+                    <MenuItem Header="{translation:TranslateExtension MenuCopyFullPath}" Name="mnu_copypath" Command="{Binding Path=CopyNameClipboardCommand}" />
                 </ContextMenu>
             </ListBox.ContextMenu>
             <ListBox.ItemsPanel>

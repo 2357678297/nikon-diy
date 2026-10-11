@@ -122,7 +122,7 @@ namespace CameraControl.Core.Translation
 
         public static string LabelCounter = "Counter";
         public static string LabelUseOriginal = "Use original filename given by the camera";
-        public static string LabelUseOriginalToolTip = "This option doesn’t work with WIA drivers";
+        public static string LabelUseOriginalToolTip = "This option doesnï¿½t work with WIA drivers";
         public static string LabelDontDownloadPhotos = "Don't download photos to PC";
         public static string LabelAlowFolderChange = "Allow folder change using image browser";
         public static string LabelTags = "Tags";
@@ -721,5 +721,30 @@ namespace CameraControl.Core.Translation
 
         // 11/10/2021
         public static string LabelKeyboardTriggerNoAF = "Keyboard trigger no auto focus";
-}
+
+        public static string ButtonConnect = "Connect";
+        public static string WindowConnect = "Connect";
+        public static string ButtonFit = "Fit";
+        public static string ButtonExecute = "Execute";
+        public static string LabelAll = "All";
+        public static string LabelRows = "Rows";
+        public static string LabelColumns = "Columns";
+        public static string LabelOutput = "Output";
+        public static string LabelCode = "Code";
+        public static string MenuCopyFullPath = "Copy full path in clipboard";
+        public static string MenuSelect = "Select";
+        public static string MenuEditIn = "Edit in";
+        public static string ToolTipFocalLength = "Focal Length";
+        public static string ToolTipExposureTime = "Exposure time";
+        public static string ToolTipExposureBias = "Exposure Bias value";
+        public static string ToolTipAperture = "Aperture value";
+        public static string ToolTipImageProperty = "Image property";
+        public static string ToolTipSystemWide = "System wide available";
+        public static string ToolTipConnectBluetooth = "Connect bluetooth device";
+        public static string WindowConnectBluetooth = "Connect Bluetooth Device";
+        public static string WindowDownloadPhotos = "Download photos";
+        public static string WindowNewVersion = "New version";
+        public static string WindowFileNameTemplateEditor = "File Name Template Editor";
+        public static string WindowScriptExecution = "Script Execution";
+    }
 }

@@ -1,6 +1,7 @@
-﻿<Window x:Class="CameraControl.windows.AboutWnd"
+<Window x:Class="CameraControl.windows.AboutWnd"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                       xmlns:translation="clr-namespace:CameraControl.Core.Translation;assembly=CameraControl.Core"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         Title="About" Height="488" Width="579" WindowStyle="ToolWindow" 
                       WindowStartupLocation="CenterScreen"
@@ -24,7 +25,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <Button Content="Close" Grid.Row="2"  Name="button2" VerticalAlignment="Top" Click="button2_Click" Margin="16" />
+        <Button Content="{translation:TranslateExtension ButtonClose}" Grid.Row="2"  Name="button2" VerticalAlignment="Top" Click="button2_Click" Margin="16" />
         <TextBlock Name="textBlock1" Margin="16" TextWrapping="Wrap" TextTrimming="WordEllipsis" TextAlignment="Justify"/>
         <TextBlock Name="textBlock2" Margin="16" TextWrapping="Wrap" TextTrimming="WordEllipsis" TextAlignment="Justify">digiCamControl - Copyright (c) 2018 Duka István<LineBreak/>
 <LineBreak/>
@@ -47,6 +48,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN<LineBr
 THE SOFTWARE." <LineBreak/>
         </TextBlock>
         <Button Content="Home page" Grid.Row="1"  HorizontalAlignment="Left" Margin="16" Name="button1" VerticalAlignment="Top" Width="120" Click="button1_Click" />
-        <Button Content="Donate" Grid.Row="1"  HorizontalAlignment="Right" Margin="16" Name="btn_donate" VerticalAlignment="Top" Width="120" Click="btn_donate_Click" />
+        <Button Content="{translation:TranslateExtension MenuDonate}" Grid.Row="1"  HorizontalAlignment="Right" Margin="16" Name="btn_donate" VerticalAlignment="Top" Width="120" Click="btn_donate_Click" />
     </Grid>
 </Window>
